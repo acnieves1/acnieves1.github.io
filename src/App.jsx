@@ -20,7 +20,7 @@ function App() {
         {/*go through all projects and generate a ProjectCard for each*/}
         {projects.map((projectData) => (
           <ProjectCard key={projectData.id} project={projectData} />
-        ))}
+        ))} 
       </section>
 
     </div>
