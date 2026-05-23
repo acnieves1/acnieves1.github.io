@@ -1,29 +1,41 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import Hero from './components/Hero';
+import Navbar from './components/Navbar';
 import ProjectCard from './components/ProjectCard';
 import { projects } from './data/projectsData';
+import Footer from './components/Footer';
 import './index.css';
 
 function App() {
  return (
-    <div className="portfolio-container">
-      
-      <section className="hero-section">
-        <h1>Ariana Nieves</h1>
-        <h2>Software Developer & Systems Engineer</h2>
-      </section>
+    <>{/* Invisible wrapper */}
+      <div id="top"></div>
+      <Navbar />
 
-      <section className="projects-grid">
-        {/*go through all projects and generate a ProjectCard for each*/}
-        {projects.map((projectData) => (
-          <ProjectCard key={projectData.id} project={projectData} />
-        ))} 
-      </section>
+      <div className="portfolio-container">
+        <Hero />
+        {/* Projects */}
+        <section id="projects" className="projects-grid">
+          {/*go through all projects and generate a ProjectCard for each*/}
+          {projects.map((projectData) => (
+            <ProjectCard key={projectData.id} project={projectData} />
+          ))} 
+        </section>
 
-    </div>
+        {/* Experience */}
+        <section id="experience" style={{ padding: '4rem 0', marginTop: '4rem', borderTop: '1px solid var(--border-color)' }}>
+            <h2>Experience</h2>
+            <p style={{ color: 'var(--text-muted)' }}>coming soon...</p>
+        </section>
+
+        {/* Education */}
+        <section id="education" style={{ padding: '4rem 0' }}>
+            <h2>Education</h2>
+            <p style={{ color: 'var(--text-muted)' }}>Academic background coming soon...</p>
+        </section>
+      </div>
+      <Footer />
+    </>
   );
 }
 
