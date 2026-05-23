@@ -22,5 +22,5 @@ export const projects = [
     tech: ["C"],
     isLive: false,
     githubLink: ""
-  }
+  } 
 ];
